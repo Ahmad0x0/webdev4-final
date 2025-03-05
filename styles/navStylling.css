@@ -1,0 +1,136 @@
+:root {
+    --primary-blue: #0047AB;
+    --secondary-blue: #4169E1;
+    --light-blue: #F0F8FF;
+    --dark-blue: #00008B;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.bank-icon {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 1rem;
+    margin-left: 90px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.logo h2 {
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.nav-links {
+    padding: 10px 0;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.nav-links a:hover {
+    background: var(--secondary-blue);
+}
+
+.nav-links i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Main content margin - Include this if you want your content to be pushed to the right */
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 70px;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}

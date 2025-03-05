@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jammal Bank - Login</title>
+  <link rel="stylesheet" href="styles/login-styles.css">
+  <script src="scripts/initializeStorage.js"></script>
+</head>
+
+<body>
+  <div class="bank-login-container">
+    <div class="bank-login-header">
+      <div class="bank-login-logo">
+        <img class="bank-login-logo-icon" src="images/logo.png" alt="">
+        <h1>Jammal Bank</h1>
+      </div>
+      <p>Welcome back! Please login to your account.</p>
+    </div>
+
+    <div class="bank-login-alert bank-login-alert-success" id="bank-login-alert-success"></div>
+    <div class="bank-login-alert bank-login-alert-danger" id="bank-login-alert-danger"></div>
+
+    <form class="bank-login-form" id="bank-login-form">
+      <div class="bank-login-form-group">
+        <label class="bank-login-form-label" for="username">Username</label>
+        <input type="text" id="username" class="bank-login-form-input" placeholder="Enter your username" required>
+      </div>
+
+      <div class="bank-login-form-group">
+        <label class="bank-login-form-label" for="password">Password</label>
+        <input type="password" id="password" class="bank-login-form-input" placeholder="Enter your password" required>
+        <span class="bank-login-password-toggle" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="bank-login-form-options">
+        <label class="bank-login-remember-me">
+          <input type="checkbox" id="rememberMe">
+          <span>Remember me</span>
+        </label>
+      </div>
+
+      <button type="submit" class="bank-login-btn">Login to Your Account</button>
+
+      
+    </form>
+
+    <div class="bank-login-loading">
+      <div class="bank-login-spinner"></div>
+    </div>
+  </div>
+
+  <script src="scripts/script-login.js"></script>
+</body>
+</html>

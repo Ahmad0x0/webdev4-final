@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jammal Bank - Transfers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/transfer.css">
+    <link rel="stylesheet" href="styles/navStylling.css">
+    <script src="scripts/initializeStorage.js"></script>
+    <script src="scripts/sessionCheckUp.js"></script>
+    <script src="scripts/transfer.js"></script>
+    <script src="scripts/navScript.js"></script>
+</head>
+
+<body>
+
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar with Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <img class="bank-icon" src="images/logo.png" alt="">
+            <h2>Jammal Bank</h2>
+            <small>Welcome back!</small>
+        </div>
+        <nav class="nav-links">
+            <a href="maindash.html"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="transfer.html"><i class="fas fa-exchange-alt"></i> Transfers</a>
+            <a href="investments.html"><i class="fas fa-chart-line"></i> Investments</a>
+            <a href="currency-converter.html"><i class="fas fa-coins"></i> Currency Converting</a>
+            <a href="financial-news.html"><i class="fas fa-newspaper"></i> Financial News</a>
+
+            <a href="logout.html" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+    <div class="main-content">
+        <h2>Transfer Money</h2>
+        <div class="transfer-container">
+            <div class="transfer-card">
+                <h3>Quick Transfer</h3>
+                <form class="transfer-form" id="quickTransferForm">
+                    <div class="form-group">
+                        <label>From Account</label>
+                        <select id="fromAccount" required>
+                            <option value="checking">Checking Account (*1234)</option>
+                            <option value="savings">Savings Account (*5678)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To Account</label>
+                        <input type="text" placeholder="Enter account number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" placeholder="Enter description">
+                    </div>
+                    <button type="submit" class="transfer-btn">Send Money</button>
+                </form>
+            </div>
+
+            <div class="transfer-card">
+                <h3>Schedule Transfer</h3>
+                <form class="transfer-form" id="scheduleTransferForm">
+                    <div class="form-group">
+                        <label>From Account</label>
+                        <select required>
+                            <option value="checking">Checking Account (*1234)</option>
+                            <option value="savings">Savings Account (*5678)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To Account</label>
+                        <input type="text" placeholder="Enter account number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Frequency</label>
+                        <select>
+                            <option value="once">Once</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="transfer-btn">Schedule Transfer</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="saved-beneficiaries">
+            <h3>Saved Beneficiaries</h3>
+            <div class="beneficiary-list" id="beneficiaryList">
+                <!-- Beneficiaries will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="transfer-history">
+            <h3>Transfer History</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Beneficiary</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="transferHistory">
+                    <!-- Transfer history will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
